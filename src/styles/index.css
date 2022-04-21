@@ -1,12 +1,30 @@
+#yellowlight, #greenlight, #redlight{
+    width: 95px;
+    height: 95px;
+    border-radius: 50px;
+    margin: 5px 5px 5px 5px;
+}
+#redlight {
+    background-color: red;
+}
+#yellowlight {
+    background-color: yellow;
+}
+#greenlight {
+    background-color: green;
+}
 
-/* 
+.select {
+    box-shadow: rgb(255, 239, 21) 0px 22px 70px 4px;
+}
+#no {
+    box-shadow: none;
+}
+.container {
+    background-color: black;
+    width: 130px;
+    height: 335px;
+    margin-top: 5px;
+    border-radius: 20px
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
