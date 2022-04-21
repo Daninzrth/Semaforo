@@ -1,4 +1,4 @@
-#yellowlight, #greenlight, #redlight{
+#yellowlight, #greenlight, #redlight, #purplelight{
     width: 95px;
     height: 95px;
     border-radius: 50px;
@@ -12,6 +12,9 @@
 }
 #greenlight {
     background-color: green;
+}
+#purplelight {
+    background-color: blueviolet;
 }
 
 .select {
@@ -27,4 +30,5 @@
     margin-top: 5px;
     border-radius: 20px
 }
+
 
