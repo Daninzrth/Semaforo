@@ -3,59 +3,34 @@ import React, { useState } from "react";
 //create your first component
 
 const Home = () => {
-	const [iluminado, setIluminado] = useState(false);
-	const [iluminado1, setIluminado1] = useState(false);
-	const [iluminado2, setIluminado2] = useState(false);
-	const [iluminado3, setIluminado3] = useState(false);
+	const [iluminado, setIluminado] = useState("");
 	const [outpurple, setPurple] = useState(true);
-	let iluminados = [iluminado, iluminado1, iluminado2];
 	function changeIluminado() {
 		var random = Math.floor(Math.random() * 3);
-		if (iluminados[random]) {
-			changeIluminado();
-		} else {
-			setIluminado(false);
-			setIluminado1(false);
-			setIluminado2(false);
-			if (random == 0) {
-				setIluminado(true);
-			} else if (random == 1) {
-				setIluminado1(true);
-			} else if (random == 2) {
-				setIluminado2(true);
-			}
+		if (random == 0) {
+			setIluminado("rojo");
+		} else if (random == 1) {
+			setIluminado("amarillo");
+		} else if (random == 2) {
+			setIluminado("verde");
 		}
 	}
+
 	const Semaforo = () => {
 		return (
 			<div>
 				<div
-					className={iluminado ? "select " : "no"}
+					className={iluminado == "rojo" ? "select" : "no"}
 					id="redlight"
-					onClick={() =>
-						setIluminado(true) &
-						setIluminado1(false) &
-						setIluminado2(false) &
-						setIluminado3(false)
-					}></div>
+					onClick={() => setIluminado("rojo")}></div>
 				<div
-					className={iluminado1 ? "select" : "no"}
+					className={iluminado == "amarillo" ? "select" : "no"}
 					id="yellowlight"
-					onClick={() =>
-						setIluminado1(true) &
-						setIluminado(false) &
-						setIluminado2(false) &
-						setIluminado3(false)
-					}></div>
+					onClick={() => setIluminado("amarillo")}></div>
 				<div
-					className={iluminado2 ? "select" : "no"}
+					className={iluminado == "verde" ? "select" : "no"}
 					id="greenlight"
-					onClick={() =>
-						setIluminado2(true) &
-						setIluminado(false) &
-						setIluminado1(false) &
-						setIluminado3(false)
-					}></div>
+					onClick={() => setIluminado("verde")}></div>
 			</div>
 		);
 	};
@@ -73,19 +48,11 @@ const Home = () => {
 		<div className="container py-3" style={{ height: "440px" }}>
 			<Semaforo />
 			<div
-				className={iluminado3 ? "select" : "no"}
+				className={iluminado == "purple" ? "select" : "no"}
 				id="purplelight"
-				onClick={() =>
-					setIluminado3(true) &
-					setIluminado(false) &
-					setIluminado1(false) &
-					setIluminado2(false)
-				}></div>
+				onClick={() => setIluminado("purple")}></div>
 			<div className="row my-5">
-				<button onClick={() => setPurple(true)}>
-					{" "}
-					Without Purple!{" "}
-				</button>
+				<button onClick={() => setPurple(true)}>Without Purple!</button>
 			</div>
 		</div>
 	);
